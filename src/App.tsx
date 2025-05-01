@@ -3,7 +3,11 @@ import { Controller, useForm } from "react-hook-form";
 import "./App.css";
 
 export default function App() {
-  const { control, handleSubmit } = useForm();
+  const { control, handleSubmit } = useForm({
+    defaultValues: {
+      name: ""
+    }
+  });
 
   function onSubmit(data: any) {
     console.log(data);
