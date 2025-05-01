@@ -4,11 +4,16 @@ import "./App.css";
 export default function App() {
   const [name, setName] = useState("");
 
+  function onSubmit(e: React.FormEvent<HTMLElement>) {
+    e.preventDefault();
+    console.log(name);
+  }
+
   return (
     <div>
       <h1>Evento</h1>
 
-      <form>
+      <form onSubmit={onSubmit}>
         <input
           type="text"
           placeholder="Nome do evento"
@@ -31,7 +36,9 @@ export default function App() {
 
         <textarea placeholder="Descrição" rows={4} />
 
-        <button type="submit">Salvar</button>
+        <button type="submit">
+          Salvar
+        </button>
       </form>
     </div>
   )
