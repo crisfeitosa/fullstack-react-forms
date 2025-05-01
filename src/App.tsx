@@ -1,12 +1,19 @@
-import "./App.css"
+import { useState } from "react";
+import "./App.css";
 
 export default function App() {
+  const [name, setName] = useState("");
+
   return (
     <div>
       <h1>Evento</h1>
 
       <form>
-        <input type="text" placeholder="Nome do evento" />
+        <input
+          type="text"
+          placeholder="Nome do evento"
+          onChange={(e) => setName(e.target.value)}
+        />
         <span className="error">Nome é obrigatório</span>
 
         <input type="date" placeholder="Nome do evento" lang="pt-BR" />
