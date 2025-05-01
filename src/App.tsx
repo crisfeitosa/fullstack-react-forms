@@ -2,14 +2,18 @@ import { Controller, useForm } from "react-hook-form";
 
 import "./App.css";
 
+type FormData = {
+  name: string;
+}
+
 export default function App() {
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit } = useForm<FormData>({
     defaultValues: {
       name: ""
     }
   });
 
-  function onSubmit(data: any) {
+  function onSubmit(data: FormData) {
     console.log(data);
   }
 
